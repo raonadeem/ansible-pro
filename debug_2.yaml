@@ -6,4 +6,8 @@
   tasks:
     - name: debug message
       debug: msg="A test message"
+    - shell: /usr/bin/uptime
+      register: var2
+    - name: Display register variable
+      debug: var=var2
 
