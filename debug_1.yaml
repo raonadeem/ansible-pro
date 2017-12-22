@@ -1,6 +1,11 @@
 ---
-- hosts: localhost
+- name: First test playbook
+  hosts: localhost
+  strategy: debug
   tasks:
   - name: Debugging!
-  - debug: 
-    msg="A test message!"
+    copy:
+      dest: /tmp/my
+      content: |
+        Hello World
+        I'm doing good AH!
