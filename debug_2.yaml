@@ -1,0 +1,9 @@
+---
+- name: Debug message and register overview
+  hosts: localhost
+  vars:
+    var1: hello
+  tasks:
+    - name: debug message
+      debug: msg="A test message"
+
