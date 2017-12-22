@@ -8,6 +8,9 @@
       debug: msg="A test message"
     - shell: /usr/bin/uptime
       register: var2
-    - name: Display register variable
-      debug: var=var2
-
+    - name: debug verbosity 1
+      debug: var=var2 verbosity=1
+    - name: debug verbosity 2
+      debug: var=var2 verbosity=2
+    - name: debug verbosity 3
+      debug: var=var2 verbosity=3
