@@ -5,7 +5,7 @@
   tasks:
   - name: Debugging!
     copy:
-      dest: /tmp/my
+      dest: /tmp/my/file
       content: |
         Hello World
         I'm doing good AH!
