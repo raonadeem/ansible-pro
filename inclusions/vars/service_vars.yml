@@ -1,4 +1,5 @@
 ---
+hostname: "{{ansible_fqdn}}"
 package: httpd
 service:  httpd
 state: started

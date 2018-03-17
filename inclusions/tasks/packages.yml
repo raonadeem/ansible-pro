@@ -1,4 +1,4 @@
-- name: Install the {{package}} package
+- name: Install the {{package}} package in {{hostname}}
   yum:
     name: "{{package}}"
     state: latest
