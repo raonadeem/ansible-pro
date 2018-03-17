@@ -1,0 +1,12 @@
+---
+- name: demo loops
+  hosts: remote
+  tasks:
+    - name: Include variables
+      include_vars: vars/sample_vars.yml
+    - name: loop over items
+      shell: echo "{{item}}"
+      with_items: "{{ count }}"
+      register: echo
+    - name: debug the loop
+      debug: var=echo
