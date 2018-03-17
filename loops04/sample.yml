@@ -5,8 +5,8 @@
     - name: Include variables
       include_vars: vars/sample_vars.yml
     - name: loop over items
-      shell: echo "{{item}}"
-      with_items: "{{ count }}"
+      shell: echo "{{item.value}}"
+      with_dict: "{{ count }}"
       register: echo
     - name: debug the loop
       debug: var=echo
