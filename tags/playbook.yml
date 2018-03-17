@@ -1,0 +1,20 @@
+---
+- name: using tags
+  hosts: remote
+  tasks:
+    - name: include configure_mail.yml
+      include: configure_mail.yml
+      when: inventory_hostname in groups['mailservers']
+  handlers:
+    - name: start_postfix
+      service:
+        name: postfix
+        state: started
+    - name: restart_postfix
+      service: postfix
+        name: postfix
+        state: restarted
+    - name: start_dovecot
+      service:
+        name: dovecot
+        state: started
