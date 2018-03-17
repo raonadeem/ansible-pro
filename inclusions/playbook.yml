@@ -1,0 +1,15 @@
+---
+- name: install and start appache
+  hosts: remote
+  #play level variables
+  vars:
+    package: httpd
+    service: httpd
+    state: started
+  tasks:
+    - name: Include the tasks
+      include: tasks/packages.yml
+      vars:  # task level variables will override the play level variables
+        package: httpd
+        service: httpd
+        state: started      
