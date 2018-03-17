@@ -1,0 +1,10 @@
+---
+- name: gather and show facts
+  hosts: all
+  tasks:
+    - name: geth fqdn and ipv4 addresses
+      debug:
+        msg: >
+          Host fqdn is {{ ansible_fqdn}}
+          with IP address {{ ansible_default_ipv4.address}}
+          

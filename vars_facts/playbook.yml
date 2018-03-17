@@ -1,0 +1,13 @@
+---
+- name: install and start appache
+  hosts: remote
+  tasks:
+    - name: install required packages
+      yum:
+        name: "{{ansible_local.custom.general.package}}"
+        state: latest
+
+    - name: start the service
+      service:
+        name: "{{ansible_local.custom.general.service}}"
+        state: "{{ansible_local.custom.general.state}}"
