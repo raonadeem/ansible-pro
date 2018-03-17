@@ -1,5 +1,5 @@
 [local]
 localhost
 
-[remote]
+[databases]
 server.ivolve.com

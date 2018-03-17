@@ -2,11 +2,6 @@
 - name: demo loops
   hosts: remote
   tasks:
-    - name: Include variables
-      include_vars: vars/sample_vars.yml
-    - name: loop over items
-      shell: echo "{{item.value}}"
-      with_dict: "{{ count }}"
-      register: echo
-    - name: debug the loop
-      debug: var=echo
+    - name: Printing the inventory groups and hostnames
+      debug:
+        msg: "Hostname is {{ inventory_hostname }} and group is {{groups}}"
