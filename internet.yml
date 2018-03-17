@@ -1,0 +1,67 @@
+---
+- name: internet services
+  hosts: remote
+  become: true
+  tasks:
+    - block:
+      - name: package firewalld
+        yum:
+          name: firewalld
+          state: latest
+      - name: package httpd
+        yum:
+          name: httpd
+          state: latest
+      - name: package php
+        yum:
+          name: php
+          state: latest
+      - name: package php-mysql
+        yum:
+          name: php-mysql
+          state: latest
+      - name: package mariadb-server
+        yum:
+          name: mariadb-server
+          state: latest
+
+    - block:
+      - name: firewalld
+        firewalld:
+          service: http
+          permanent: true
+          state: enabled
+          immediate: yes
+
+    - block:
+      - name: service firewalld
+        service:
+          name: firewalld
+          enabled: true
+          state: running
+      - name: service httpd
+        service:
+          name: httpd
+          enabled: true
+          state: running
+      - name: service httpd
+        service:
+          name: httpd
+          enabled: true
+          state: running                
+
+    - block:
+      - name: content
+        get_url:
+          dest: /var/www/html
+          url: http://hellodotcom.hello.com/en/index.html
+          mode: 0644
+
+- name: test
+  hosts: local
+  tasks:
+  - name: connect to web server
+    uri:
+      url: http://server.ivolve.com
+      status_code: 200
+
