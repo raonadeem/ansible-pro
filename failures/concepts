@@ -1,0 +1,18 @@
+ignore the failed tasks:
+	ignore_errors:
+		"By default if a task fails the playbook is aborted. This
+		behaviour can be changed with ignore_errors"
+Force execution of handlers:
+	force_handlers:
+		"By default if a task that notifies the handler fails then 
+		it skips the handler. This handler is forced to execute using
+		force_handlers"
+Override the failed state:
+	failed_when:
+		"A task may succeed but based on some condition admin can
+		change the state to fail"
+Override the changed state:
+	changed_when:
+		"A handler is skipped if no change in the task. But admin can
+		change the state to changed based on some condition so that
+		handlers are executed"
