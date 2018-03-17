@@ -1,9 +1,11 @@
 ---
 - name: install and start appache
   hosts: remote
-  vars_files:
-    - vars/service_vars.yml
   tasks:
+    - name: Include the vars file
+      include_vars: vars/service_vars.yml
+      
     - name: Include the tasks
       include: tasks/packages.yml
+
      
