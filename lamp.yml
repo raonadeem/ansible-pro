@@ -8,5 +8,6 @@
         state: latest
     - name: Service httpd
       service:
-    	  name: httpd
-    	  state: started
+        name: httpd
+        enabled: true
+        state: running
