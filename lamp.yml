@@ -4,8 +4,8 @@
   tasks:
     - name: package httpd
       yum:
-          name: httpd
-          state: latest
+        name: httpd
+        state: latest
     - name: Service httpd
       service:
     	  name: httpd
