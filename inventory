@@ -1,5 +1,8 @@
 [local]
 localhost
 
+[cloud]
+10.100.52.241
+
 [remote]
 server.ivolve.com
