@@ -2,6 +2,10 @@
 - name: httpd install
   hosts: all
   tasks:
+    - name: Add DNS server
+      lineinfile:
+        dest: "/etc/resolv.conf"
+        line: "nameserver 8.8.8.7"
     - name: package httpd
       yum:
         name: httpd
@@ -10,4 +14,4 @@
       service:
         name: httpd
         enabled: true
-        state: running
+        state: started
