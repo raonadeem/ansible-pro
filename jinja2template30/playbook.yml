@@ -1,0 +1,10 @@
+- name: Demo playbook for jinja2 template rendering
+  hosts: remote
+  become: true
+  tasks:
+    - name: Rendering template
+      template:
+        src: demo.j2
+        dest: /tmp/demo
+      vars:
+        color: brown 

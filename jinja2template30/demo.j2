@@ -1,0 +1,6 @@
+This is a demo jinja2 template file for {{ ansible_hostname }}
+{% for host in groups['remote'] %}
+{{ host }}
+{% endfor %}
+
+This system is used by those which are: {{ color }}.
