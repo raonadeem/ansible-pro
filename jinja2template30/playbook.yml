@@ -6,5 +6,3 @@
       template:
         src: demo.j2
         dest: /tmp/demo
-      vars:
-        color: brown 

@@ -1,6 +1,3 @@
-This is a demo jinja2 template file for {{ ansible_hostname }}
-{% for host in groups['remote'] %}
-{{ host }}
-{% endfor %}
+This system total memory is {{ ansible_memory_mb.real.total }} MB
+and the current free memory is {{ ansible_memory_mb.real.free }} MB
 
-This system is used by those which are: {{ color }}.
