@@ -1,0 +1,4 @@
+---
+- name: Demo msg
+  debug:
+    msg: "Hello {{ system_owner }}"

@@ -1,0 +1,6 @@
+---
+- name: demo role
+  hosts: remote
+  roles:
+    - role: firewallrole
+      firewall_service: http
