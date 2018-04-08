@@ -1,0 +1,4 @@
+[local]
+localhost ansible_connection=local
+[remote]
+192.168.122.208 ansible_connection=ssh
